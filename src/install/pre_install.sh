@@ -15,7 +15,7 @@ sudo apt-get -y install python3-pip git libffi-dev lsb-release
 DISTRO=$(lsb_release -is)
 if [ "${DISTRO}" = "Linuxmint" ] || [ "${DISTRO}" = "Ubuntu" ]; then
     DISTRO=ubuntu
-elif [ "${DISTRO}" = "Kali" ] || [ "${DISTRO}" = "Debian" ]; then
+elif [ "${DISTRO}" = "Kali" ] || [ "${DISTRO}" = "Debian" ] || [ "${DISTRO}" = "Parrot" ]; then
     DISTRO=debian
 fi
 
@@ -26,6 +26,8 @@ elif [ "${CODENAME}" = "ulyana" ] || [ "${CODENAME}" = "ulyssa" ] || [ "${CODENA
     CODENAME=focal
 elif  [ "${CODENAME}" = "kali-rolling" ]; then
     CODENAME=bookworm
+elif  [ "${CODENAME}" = "ara" ]; then
+    CODENAME=bullseye
 elif [ -z "${CODENAME}" ]; then
 	echo "Could not get distribution codename. Please make sure that your distribution is compatible to ubuntu/debian."
 	exit 1
